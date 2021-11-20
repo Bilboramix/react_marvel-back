@@ -13,6 +13,9 @@ app.use(formidable());
 const comicsRoad = require("./roads/comics");
 app.use(comicsRoad);
 
+const charactersRoad = require("./roads/characters");
+app.use(charactersRoad);
+
 app.all("*", (req, res) => {
   res.status(404).json({ message: "Error 404, page not found 😥" });
 });
