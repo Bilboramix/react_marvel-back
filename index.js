@@ -19,6 +19,10 @@ app.use(charactersRoad);
 const characterRoad = require("./roads/character");
 app.use(characterRoad);
 
+app.all("/", (req, res) => {
+  res.status(200).json({ message: "Welcome to Bilboramixe's API 😎" });
+});
+
 app.all("*", (req, res) => {
   res.status(404).json({ message: "Error 404, page not found 😥" });
 });
